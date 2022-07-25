@@ -20,7 +20,7 @@ public class tokenGenerator {
                 for (int i = 0; i < 5; i++) {
                     charList.add(i, (char) (random.nextInt(122 - 33)+33));
                 }
-                String shortToken = charList.toString().replaceAll(", ", "").substring(1,6);
+                String shortToken = charList.toString().replaceAll(", ", "").substring(1, charList.size()+1);
                 System.out.println(shortToken);
 
                 break;
@@ -28,14 +28,14 @@ public class tokenGenerator {
                 for (int i = 0; i < 10; i++) {
                     charList.add(i, (char) (random.nextInt(122 - 33)+33));
                 }
-                    String mediumToken = charList.toString().replaceAll(", ", "").substring(1, 11);
+                    String mediumToken = charList.toString().replaceAll(", ", "").substring(1, charList.size()+1);
                     System.out.println(mediumToken);
                 break;
             case 15:
                 for (int i = 0; i < 15; i++) {
                     charList.add(i, (char) (random.nextInt(122 - 33)+33));
                 }
-                    String longToken = charList.toString().replaceAll(", ", "").substring(1, 16);
+                    String longToken = charList.toString().replaceAll(", ", "").substring(1, charList.size()+1);
                     System.out.println(longToken);
                 break;
             default:
