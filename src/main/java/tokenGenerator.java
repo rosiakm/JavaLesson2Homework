@@ -18,28 +18,58 @@ public class tokenGenerator {
         switch (size) {
             case 5:
                 for (int i = 0; i < 5; i++) {
-                    charList.add(i, (char) (random.nextInt(122 - 33)+33));
+                    charList.add(i, createBaseList().get(random.nextInt(createBaseList().size())));
                 }
-                String shortToken = charList.toString().replaceAll(", ", "").substring(1, charList.size()+1);
+                String shortToken = charList.toString().
+                        replaceAll(", ", "").
+                        substring(1, charList.size() + 1);
                 System.out.println(shortToken);
 
                 break;
             case 10:
                 for (int i = 0; i < 10; i++) {
-                    charList.add(i, (char) (random.nextInt(122 - 33)+33));
+                    charList.add(i, createBaseList().get(random.nextInt(createBaseList().size())));
                 }
-                    String mediumToken = charList.toString().replaceAll(", ", "").substring(1, charList.size()+1);
-                    System.out.println(mediumToken);
+                String mediumToken = charList.toString().
+                        replaceAll(", ", "").
+                        substring(1, charList.size() + 1);
+                System.out.println(mediumToken);
                 break;
             case 15:
                 for (int i = 0; i < 15; i++) {
-                    charList.add(i, (char) (random.nextInt(122 - 33)+33));
+                    charList.add(i, createBaseList().get(random.nextInt(createBaseList().size())));
                 }
-                    String longToken = charList.toString().replaceAll(", ", "").substring(1, charList.size()+1);
-                    System.out.println(longToken);
+                String longToken = charList.toString().
+                        replaceAll(", ", "").
+                        substring(1, charList.size() + 1);
+                System.out.println(longToken);
                 break;
             default:
                 System.out.println("You can choose only between 5, 10 and 15");
         }
+    }
+
+    public static List<Character> createBaseList() {
+        List<Character> baseList = new ArrayList<>();
+
+        //adding lowercases
+        for (int i = 97; i < 123; i++) {
+            baseList.add((char) i);
+        }
+        //adding uppercases
+        for (int i = 65; i < 91; i++) {
+            baseList.add((char) i);
+        }
+        //adding numbers
+        for (int i = 48; i < 58; i++) {
+            baseList.add((char) i);
+        }
+        //adding special signs
+        for (int i = 33; i < 43; i++) {
+            baseList.add((char) i);
+        }
+        baseList.add((char) 64);
+        baseList.add((char) 94);
+        return baseList;
     }
 }
