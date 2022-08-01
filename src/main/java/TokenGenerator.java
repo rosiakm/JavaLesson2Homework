@@ -22,10 +22,10 @@ public class TokenGenerator {
                 for (int i = 0; i < size; i++) {
                     charList.add(i, createBaseList().get(random.nextInt(createBaseList().size())));
                 }
-                String shortToken = charList.toString().
+                String token = charList.toString().
                         replaceAll(", ", "").
                         substring(1, charList.size() + 1);
-                System.out.println(shortToken);
+                System.out.println(token);
 
                 break;
             default:
