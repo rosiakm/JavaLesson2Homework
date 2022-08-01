@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class tokenGenerator {
+public class TokenGenerator {
     public static void main(String[] args) {
         //declaration of new list to store the random characters
         List<Character> charList = new ArrayList<>();
@@ -17,7 +17,9 @@ public class tokenGenerator {
 
         switch (size) {
             case 5:
-                for (int i = 0; i < 5; i++) {
+            case 10:
+            case 15:
+                for (int i = 0; i < size; i++) {
                     charList.add(i, createBaseList().get(random.nextInt(createBaseList().size())));
                 }
                 String shortToken = charList.toString().
@@ -25,24 +27,6 @@ public class tokenGenerator {
                         substring(1, charList.size() + 1);
                 System.out.println(shortToken);
 
-                break;
-            case 10:
-                for (int i = 0; i < 10; i++) {
-                    charList.add(i, createBaseList().get(random.nextInt(createBaseList().size())));
-                }
-                String mediumToken = charList.toString().
-                        replaceAll(", ", "").
-                        substring(1, charList.size() + 1);
-                System.out.println(mediumToken);
-                break;
-            case 15:
-                for (int i = 0; i < 15; i++) {
-                    charList.add(i, createBaseList().get(random.nextInt(createBaseList().size())));
-                }
-                String longToken = charList.toString().
-                        replaceAll(", ", "").
-                        substring(1, charList.size() + 1);
-                System.out.println(longToken);
                 break;
             default:
                 System.out.println("You can choose only between 5, 10 and 15");
